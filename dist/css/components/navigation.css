@@ -1,0 +1,28 @@
+.main-nav{
+    background-color: var(--color-primary);
+    > *{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.nav-list{
+    display: flex;
+    justify-content: space-between;
+    .nav-link{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: var(--color-white);
+        font-size: 18px;
+        padding: 1.2em 0.95em;
+    }
+    .nav-item{
+        &:first-child{
+            .nav-link{
+                padding-left: 0;
+            }
+        }
+    }
+}
