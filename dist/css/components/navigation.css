@@ -17,12 +17,11 @@
         color: var(--color-white);
         font-size: 18px;
         padding: 1.2em 0.95em;
-    }
-    .nav-item{
-        &:first-child{
-            .nav-link{
-                padding-left: 0;
-            }
+        background-color: var(--color-primary);
+        &:hover{
+            filter: saturate(5.5); 
+            color:#fff;
         }
     }
+    
 }

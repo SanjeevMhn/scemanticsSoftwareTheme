@@ -4,8 +4,148 @@
 @import url('./dist/css/components/header.css');
 @import url('./dist/css/components/navigation.css');
 
+.hero-content{
+	height: calc(100vh - 175px);
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+
+	.text-content{
+		width: 100%;
+		margin-left: calc(calc(100% - var(--wrapper-width)) / 2);
+
+		> *{
+			width: 35%;
+		}
+
+		.hero-text-primary{
+			color: var(--color-primary);
+			font-weight: 700;
+			font-size: 52px;
+		}
+		.hero-text-secondary{
+			color: #fff;
+			font-size: 22px;
+			padding-top: 5px;
+			color: #fff;
+		}
+	}
+
+}
+
+.company-info-section{
+	> *{
+		.company-info-content{
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			position: relative;
+
+			&::before{
+				content: '';
+				position: absolute;
+				height: 80%;
+				width: 2px;
+				background-color: var(--color-light-gray);
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}	
+
+			.info{
+				display: flex;
+				flex-direction: column;
+				gap: 25px;
+				align-items: center;
+				flex: 0 0 40%;
+				color: var(--color-secondary);
+				p{
+					line-height: 1.75;
+					font-size: 17px;
+				}
+				.img-container{
+					width: 100%;
+					max-width: 30vw;
+					height: auto;
+					img{
+						height: auto;
+						width: 100%;
+						object-fit: contain;
+					}
+				}
+			}
+		}
+	}
+}
+
+.company-stats-section{
+	
+	.header-text{
+		color: #fff;
+	}
+
+	.stats-container{
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(120px, auto));
+		margin-bottom: 50px;
+		.stat{
+			color: #fff;
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			.stat-num{
+				font-size: 40px;
+				font-weight: 700;	
+			}
+			.stat-title{
+				font-size: 22px;
+			}
+		}
+	}
+
+}
+
+.company-operations-section{
+	.operations-list{
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(350px, auto));
+		gap: 20px;
+
+		.operation{
+			display: flex;
+			flex-direction: column;
+			gap: 20px;
+			.thumbnail{
+				width: 350px;
+				height: auto;
+				img{
+					width: 100%;
+					height: auto;
+					object-fit: cover;
+				}
+			}
+			.operation-detail{
+				>*{
+					padding-bottom: 10px;
+				}
+				.detail-title{
+					font-weight: 600;
+					font-size: 17.5px;
+				}
+				.detail-desc{
+					color: var(--color-gray);
+					line-height: 1.5;
+				}
+			}
+		}
+	}
+}
 
 
-
+.company-operations-section{
+	.header-text{
+		color: var(--color-secondary);
+	}
+}
 
 
