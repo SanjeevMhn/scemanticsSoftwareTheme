@@ -3,6 +3,7 @@
 @import url('./dist/css/defaults.css');
 @import url('./dist/css/components/header.css');
 @import url('./dist/css/components/navigation.css');
+@import url('./dist/css/components/footer.css');
 
 .hero-content{
 	height: calc(100vh - 175px);
@@ -12,10 +13,12 @@
 
 	.text-content{
 		width: 100%;
-		margin-left: calc(calc(100% - var(--wrapper-width)) / 2);
+		margin: 0 auto;
+		text-align: center;
 
 		> *{
-			width: 35%;
+			width: 70%;
+			margin: 0 auto;
 		}
 
 		.hero-text-primary{
@@ -38,19 +41,9 @@
 		.company-info-content{
 			display: flex;
 			align-items: center;
+			flex-direction: column;
 			justify-content: space-between;
 			position: relative;
-
-			&::before{
-				content: '';
-				position: absolute;
-				height: 80%;
-				width: 2px;
-				background-color: var(--color-light-gray);
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%);
-			}	
 
 			.info{
 				display: flex;
@@ -65,7 +58,6 @@
 				}
 				.img-container{
 					width: 100%;
-					max-width: 30vw;
 					height: auto;
 					img{
 						height: auto;
@@ -88,6 +80,7 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(120px, auto));
 		margin-bottom: 50px;
+		gap: 20px;
 		.stat{
 			color: #fff;
 			display: flex;
@@ -105,37 +98,38 @@
 
 }
 
-.company-operations-section{
-	.operations-list{
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(350px, auto));
-		gap: 20px;
+.grid-list{
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 20px;
 
-		.operation{
-			display: flex;
-			flex-direction: column;
-			gap: 20px;
-			.thumbnail{
-				width: 350px;
+	 > *{
+	 	display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 20px;
+		padding: 15px;
+		.thumbnail{
+			width: 100%;
+			height: auto;
+			img{
+				width: 100%;
 				height: auto;
-				img{
-					width: 100%;
-					height: auto;
-					object-fit: cover;
-				}
+				object-fit: cover;
 			}
-			.operation-detail{
-				>*{
-					padding-bottom: 10px;
-				}
-				.detail-title{
-					font-weight: 600;
-					font-size: 17.5px;
-				}
-				.detail-desc{
-					color: var(--color-gray);
-					line-height: 1.5;
-				}
+		}
+		.detail{
+			>*{
+				padding-bottom: 10px;
+			}
+			.detail-title{
+				font-weight: 600;
+				font-size: 17.5px;
+			}
+			.detail-desc{
+				color: var(--color-gray);
+				line-height: 1.5;
 			}
 		}
 	}
@@ -148,4 +142,132 @@
 	}
 }
 
+.company-moto-section{
+	.company-moto-info{
+		display: grid;
+		grid-template-columns: auto;
+		justify-items: center;
+		gap: 30px;
 
+		.img-container{
+			width: 100%;
+			height: auto;
+			img{
+				width: 100%;
+				height: auto;
+				object-fit: cover;
+			}
+		}
+
+		.company-moto-detail{
+			text-align: center;
+			.label-text{
+				font-size: 25px;
+				font-weight: 700;
+				margin-bottom: 15px;
+			}
+			.moto-desc{
+				line-height: 1.5;
+			}
+		}
+	}
+}
+
+.company-invitation-section{
+	background: var(--color-primary);
+	color: #fff;
+
+	.invitation-container{
+		display: grid;
+		grid-template-columns: auto;
+		color: #fff;
+		gap: 15px;
+		.label-text{
+			grid-column: 1;
+			grid-row: 1;
+			font-size: 25px;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+		.desc-text{
+			grid-row: 2;
+			grid-column: 1;
+		}
+		.direct-contact{
+			grid-row: 3;
+			grid-column: 1;
+		}
+	}
+
+}
+
+
+@media screen and (min-width: 1140px){
+	.hero-content .text-content{
+		margin: unset;
+		margin-left: calc(calc(100% - var(--wrapper-width)) / 2);
+		text-align: left;
+	}
+
+	.hero-content .text-content > *{
+		width: 35%;
+		margin: unset;
+	}
+
+	.company-info-section{
+		> *{
+			.company-info-content{
+				flex-direction: row;
+				&::before{
+					content: '';
+					position: absolute;
+					height: 80%;
+					width: 2px;
+					background-color: var(--color-light-gray);
+					left: 50%;
+					top: 50%;
+					transform: translate(-50%, -50%);
+				}
+				.info{
+					.img-container{
+						max-width: 40vw;
+					}
+				}
+			}
+		}
+	}
+
+	.company-operations-section,
+	.company-blog-list{
+		padding: 70px 0;
+	}
+
+	.company-moto-section{
+		.company-moto-info{
+			grid-template-columns: 50% auto;
+			align-items: center;
+			
+			.company-moto-detail{
+				text-align: left;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px){
+	.company-invitation-section{
+		.invitation-container{
+			grid-template-columns: auto 20%;
+			.direct-contact{
+				grid-row: 1 / span 2;
+				grid-column: 2;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 300px){
+	.grid-list{
+		grid-template-columns: auto;
+	}
+}

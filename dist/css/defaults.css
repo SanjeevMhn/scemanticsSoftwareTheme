@@ -50,9 +50,27 @@ input#search-text{
     padding-right: 40px;
 }
 
-a.direct-contact{
+.btn{
+    outline: unset;
+    border-width: 0;
+}
+
+.btn-primary{
+    background: var(--color-primary);
+    color: #fff;
     display: flex;
     align-items: center;
+    justify-content: center;
+    padding: 15px;
+    font-size: 15px;
+    border: 1px solid var(--color-primary);
+}
+
+a.direct-contact,
+.resp-menu-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 1.2em 2.5em;
     background-color: var(--color-secondary);
     color: var(--color-white);
@@ -60,10 +78,6 @@ a.direct-contact{
     font-weight: 600;
     text-transform: uppercase;
     text-decoration: none;
-}
-
-.wrapper-container{
-    padding: 70px 0;
 }
 
 .has-back-img{
@@ -105,5 +119,20 @@ a.direct-contact{
     font-weight: 700;
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: 90px;
+    margin: 15px auto;
+}
+
+.wrapper-container{
+    padding: 15px; 
+}   
+
+@media screen and (min-width: 1140px){
+    .wrapper-container{
+        padding: 70px 0;
+    }
+
+    .header-text{
+        margin-top: 0;
+        margin-bottom: 70px;
+    }   
 }

@@ -1,13 +1,18 @@
 .main-nav{
     background-color: var(--color-primary);
+    padding: 0 0 0 12px; 
     > *{
         display: flex;
         justify-content: space-between;
     }
+
+    .direct-contact{
+        display: none;
+    }
 }
 
 .nav-list{
-    display: flex;
+    display: none;
     justify-content: space-between;
     .nav-link{
         display: flex;
@@ -24,4 +29,21 @@
         }
     }
     
+}
+
+
+@media screen and (min-width: 1140px){
+    .main-nav{
+        padding: 0;
+        .brand-name{
+            display: none;
+        }
+        .nav-list,
+        .direct-contact{
+            display: flex;
+        }
+        .resp-menu-btn{
+            display: none;
+        }
+    }
 }
