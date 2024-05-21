@@ -5,7 +5,8 @@
     gap: 5px;
 
     .company-name{
-        --font-weight: 600;
+        --font-weight: 500;
+        font-family: 'Barlow Condensed', sans-serif;
         color: var(--color-secondary);
         font-size: var(--fs-md);
         font-weight: var(--font-weight);
