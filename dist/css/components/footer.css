@@ -50,7 +50,7 @@
 		.nav-link{
 			display: flex;
 			padding: 5px 10px;
-			font-size: 16px;
+			font-size: var(--fs-base);
 			color: #fff;
 			text-decoration: none;
 		}
@@ -64,7 +64,7 @@
 		gap: 10px;
 
 		.label-text{
-			font-size: 17px;
+			font-size: var(--fs-base);
 		}
 		.form-container{
 			.newsletter-form{

@@ -5,10 +5,9 @@
     gap: 5px;
 
     .company-name{
-        --font-size: 21.5px;
         --font-weight: 600;
         color: var(--color-secondary);
-        font-size: var(--font-size);
+        font-size: var(--fs-md);
         font-weight: var(--font-weight);
     }
 }
@@ -36,7 +35,7 @@
             display: flex;
             flex-direction: column;
             gap: 5px;
-            font-size: 12px;
+            font-size: var(--fs-xs);
             color: var(--color-gray);
         }
     }

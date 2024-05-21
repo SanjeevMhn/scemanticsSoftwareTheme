@@ -5,4 +5,21 @@
     --color-gray: #777777;
     --color-light-gray: #e9e9e9; 
     --wrapper-width: 1140px;
+
+
+    --fs-xl: 2rem;
+    --fs-lg: 1.5em;
+    --fs-md: 1.12rem;
+    --fs-base: 1rem;
+    --fs-sm: 0.95rem;
+    --fs-xs: 0.75rem;
+}
+
+@media screen and (min-width: 990px){
+    :root{
+        --fs-xl: 3rem;
+        --fs-lg: 2.2rem;
+        --fs-md: 1.75rem;
+        --fs-base: 1.12rem;   
+    }
 }

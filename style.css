@@ -17,18 +17,18 @@
 		text-align: center;
 
 		> *{
-			width: 70%;
+			width: 90%;
 			margin: 0 auto;
 		}
 
 		.hero-text-primary{
 			color: var(--color-primary);
 			font-weight: 700;
-			font-size: 52px;
+			font-size: var(--fs-xl);
 		}
 		.hero-text-secondary{
 			color: #fff;
-			font-size: 22px;
+			font-size: var(--fs-md);
 			padding-top: 5px;
 			color: #fff;
 		}
@@ -54,7 +54,7 @@
 				color: var(--color-secondary);
 				p{
 					line-height: 1.75;
-					font-size: 17px;
+					font-size: var(--fs-base);
 				}
 				.img-container{
 					width: 100%;
@@ -79,7 +79,7 @@
 	.stats-container{
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(120px, auto));
-		margin-bottom: 50px;
+		padding: 15px 0;
 		gap: 20px;
 		.stat{
 			color: #fff;
@@ -87,11 +87,11 @@
 			flex-direction: column;
 			gap: 8px;
 			.stat-num{
-				font-size: 40px;
+				font-size: var(--fs-lg);
 				font-weight: 700;	
 			}
 			.stat-title{
-				font-size: 22px;
+				font-size: var(--fs-base);
 			}
 		}
 	}
@@ -125,11 +125,12 @@
 			}
 			.detail-title{
 				font-weight: 600;
-				font-size: 17.5px;
+				font-size: var(--fs-base);
 			}
 			.detail-desc{
 				color: var(--color-gray);
 				line-height: 1.5;
+				font-size: var(--fs-sm);
 			}
 		}
 	}
@@ -162,12 +163,13 @@
 		.company-moto-detail{
 			text-align: center;
 			.label-text{
-				font-size: 25px;
+				font-size: var(--fs-lg);
 				font-weight: 700;
 				margin-bottom: 15px;
 			}
 			.moto-desc{
 				line-height: 1.5;
+				font-size: var(--fs-base);
 			}
 		}
 	}
@@ -185,13 +187,14 @@
 		.label-text{
 			grid-column: 1;
 			grid-row: 1;
-			font-size: 25px;
+			font-size: var(--fs-md);
 			font-weight: 700;
 			text-transform: uppercase;
 		}
 		.desc-text{
 			grid-row: 2;
 			grid-column: 1;
+			font-size: var(--fs-base);
 		}
 		.direct-contact{
 			grid-row: 3;
