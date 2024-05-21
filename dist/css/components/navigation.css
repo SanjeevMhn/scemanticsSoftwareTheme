@@ -31,6 +31,42 @@
     
 }
 
+.offscreen-nav{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    max-width: 350px;
+    width: 90%;
+    z-index: 1;
+    background-color: #fff;
+    border-left: 1px solid var(--color-primary);
+    box-shadow: -5px 0 15px 10px #00000087;
+    display: none;
+
+    &.show{
+        display: block;
+    }
+
+    .offscreen-nav-header{
+        display: flex;
+        gap: 5px;
+        align-items: center;
+    }
+
+
+    .search-form{
+        padding: 10px;
+    }
+
+    .nav-list{
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+}
+
 
 @media screen and (min-width: 1140px){
     .main-nav{

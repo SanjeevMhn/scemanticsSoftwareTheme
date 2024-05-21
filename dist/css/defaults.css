@@ -1,5 +1,10 @@
 body{
     font-family: "Poppins", sans-serif;
+    position: relative;
+
+    &.fixed{
+        position: fixed;
+    }
 }
 
 .wrapper{
@@ -55,8 +60,8 @@ input#search-text{
     border-width: 0;
 }
 
-.btn-primary{
-    background: var(--color-primary);
+.btn-primary,
+.btn-secondary{
     color: #fff;
     display: flex;
     align-items: center;
@@ -64,6 +69,14 @@ input#search-text{
     padding: 15px;
     font-size: var(--fs-sm);
     border: 1px solid var(--color-primary);
+}
+
+.btn-primary{
+    background: var(--color-primary);
+}
+
+.btn-secondary{
+    background-color: var(--color-secondary);
 }
 
 a.direct-contact,
