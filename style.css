@@ -57,7 +57,7 @@
 					font-size: var(--fs-base);
 				}
 				.img-container{
-					width: 100%;
+					width: 85%;
 					height: auto;
 					img{
 						height: auto;
@@ -151,7 +151,7 @@
 		gap: 30px;
 
 		.img-container{
-			width: 100%;
+			width: 75%;
 			height: auto;
 			img{
 				width: 100%;
