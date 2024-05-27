@@ -52,9 +52,12 @@
 				align-items: center;
 				flex: 0 0 40%;
 				color: var(--color-secondary);
-				p{
-					line-height: 1.75;
+				p,.label-text{
+					line-height: var(--line-height);
 					font-size: var(--fs-base);
+				}
+				.label-text{
+					text-align: center;
 				}
 				.img-container{
 					width: 85%;
@@ -127,7 +130,7 @@
 			}
 			.detail-desc{
 				color: var(--color-gray);
-				line-height: 1.5;
+				line-height: var(--line-height); 
 				font-size: var(--fs-sm);
 				display: -webkit-box;
 			    -webkit-box-orient: vertical;
@@ -171,7 +174,7 @@
 				margin-bottom: 15px;
 			}
 			.moto-desc{
-				line-height: 1.5;
+				line-height: var(--line-height);
 				font-size: var(--fs-base);
 			}
 		}
