@@ -1,4 +1,4 @@
-
+<?php get_header(); ?>
     <section class="hero-content has-back-img">
         <div class="text-content">
             <h2 class="hero-text-primary">Work with the best team</h2>
@@ -213,3 +213,4 @@
         </div>
     </section>
 
+<?php get_footer(); ?>
