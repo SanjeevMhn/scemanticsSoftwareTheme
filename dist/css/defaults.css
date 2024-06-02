@@ -1,3 +1,8 @@
+html{
+    margin-top: 0!important;
+}
+
+
 body{
     font-family: "Poppins", sans-serif;
     position: relative;
@@ -87,10 +92,14 @@ a.direct-contact,
     padding: 1.2em 2.5em;
     background-color: var(--color-secondary);
     color: var(--color-white);
-    font-size: var(--fs-base);
+    font-size: var(--fs-sm);
     font-weight: 600;
     text-transform: uppercase;
     text-decoration: none;
+}
+
+.resp-menu-btn{
+    margin-left: auto;
 }
 
 .has-back-img{

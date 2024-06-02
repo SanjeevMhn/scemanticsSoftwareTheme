@@ -3,12 +3,13 @@
     display: flex;
     align-items: center;
     gap: 5px;
+    text-decoration: none;
 
     .company-name{
         --font-weight: 500;
         font-family: 'Barlow Condensed', sans-serif;
         color: var(--color-secondary);
-        font-size: var(--fs-md);
+        font-size: var(--fs-base);
         font-weight: var(--font-weight);
     }
 }
@@ -33,11 +34,15 @@
         align-items: center;
         gap: 20px;
         .detail{
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
             font-size: var(--fs-xs);
             color: var(--color-gray);
+            overflow-wrap: break-word;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-height: var(--line-height);
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
     }
 }

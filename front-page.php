@@ -1,11 +1,18 @@
 <?php get_header(); ?>
     <section class="hero-content has-back-img">
         <div class="text-content">
-            <h2 class="hero-text-primary">Work with the best team</h2>
-            <h4 class="hero-text-secondary">We are here to help you create amazing experiences for our clients.</h4>    
+            <h2 class="hero-text-primary">
+                <?php echo get_theme_mod('semantics-hero-text-setting'); ?>
+            </h2>
+            <h4 class="hero-text-secondary">
+                <?php echo get_theme_mod('semantics-hero-secondary-text-setting'); ?>
+            </h4>
         </div>
         <div class="back-img">
-            <img src="./assets/images/hero.jpg" alt="background-image">
+            <?php if(get_background_image()){ ?>
+                <img src="<?php echo get_background_image(); ?>" alt="background-image">
+            <?php } ?>
+            
         </div>
     </section>
 
