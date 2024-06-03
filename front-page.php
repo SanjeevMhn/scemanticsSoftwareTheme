@@ -20,19 +20,19 @@
         <div class="wrapper">
             <div class="company-info-content">
                 <div class="info">
-                    <h4 class="label-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, sint!
-                    </h4>
+                    <?php if(get_theme_mod('semantics-info-thumbnail-setting')) { ?>
                     <div class="img-container">
-                        <img src="./assets/images/companyInfo.jpg" alt="">
+                        <img src="<?php echo get_theme_mod('semantics-info-thumbnail-setting'); ?>" alt="">
                     </div>
-                    <h5 class="label-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h5>
+                    <?php } ?>
                 </div>
                 <div class="info">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis illum dolorum aut architecto,
-                        possimus inventore consequatur? Expedita porro nesciunt quia laboriosam quae, ea quam voluptate
-                        officiis illum voluptas, enim consequatur alias mollitia repellat sed at accusantium nulla,
-                        pariatur dolores. Quaerat nihil non hic magni similique unde, at fugiat tempora cumque!</p>
+                    <h2 class="label-text">
+                        <?php echo get_theme_mod('semantics-info-header-text-setting'); ?>
+                    </h2>
+                    <p>
+                        <?php echo get_theme_mod('semantics-info-text-setting'); ?>
+                    </p>
                 </div>
             </div>
 
@@ -44,114 +44,134 @@
             <h2 class="header-text">Best Facts Of Our Company</h2>
             <div class="stats-container">
                 <div class="stat">
-                    <div class="stat-num">7</div>
+                    <div class="stat-num">
+                        <?php echo get_theme_mod('semantics-company-clients-setting'); ?>
+                    </div>
                     <div class="stat-title">satisfied clients</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-num">22</div>
+                    <div class="stat-num">
+                        <?php echo get_theme_mod('semantics-company-projects-setting'); ?>
+                    </div>
                     <div class="stat-title">completed projects</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-num">20</div>
-                    <div class="stat-title">experts works</div>
+                    <div class="stat-num">
+                        <?php echo get_theme_mod('semantics-company-employees-setting'); ?>
+                    </div>
+                    <div class="stat-title">total employees</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-num">98%</div>
+                    <div class="stat-num">
+                        <?php echo get_theme_mod('semantics-company-satisfaction-setting'); ?>
+                    </div>
                     <div class="stat-title">satisfaction rate</div>
                 </div>
                 <div class="stat">
-                    <div class="stat-num">500+</div>
+                    <div class="stat-num">
+                        <?php echo get_theme_mod('semantics-company-workhours-setting'); ?>
+                    </div>
                     <div class="stat-title">hours of work</div>
                 </div>
             </div>
             <div class="back-img">
-                <img src="./assets/images/operation.jpg" alt="">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/operation.jpg" alt="">
             </div>
         </div>
     </section>
 
     <section class="company-operations-section">
         <div class="wrapper">
-            <h2 class="header-text">what we do</h2>
+            <h2 class="header-text">Our Services</h2>
             <div class="operations-list grid-list">
-                <div class="operation">
-                    <div class="thumbnail">
-                        <img src="./assets/images/companyInfo.jpg" alt="">
-                    </div>
-                    <div class="operation-detail detail">
-                        <h2 class="detail-title">Theme Development</h2>
-                        <p class="detail-desc">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque repellendus porro placeat praesentium nisi similique. Soluta quasi, eaque incidunt doloremque alias repellat perspiciatis, temporibus eos ea quibusdam eius, mollitia, asperiores.
-                        </p>
-                    </div>
-                </div>
-                <div class="operation">
-                    <div class="thumbnail">
-                        <img src="./assets/images/companyInfo.jpg" alt="">
-                    </div>
-                    <div class="operation-detail detail">
-                        <h2 class="detail-title">Plugin Development</h2>
-                        <p class="detail-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maxime,
-                            molestias!</p>
-                    </div>
-                </div>
-                <div class="operation">
-                    <div class="thumbnail">
-                        <img src="./assets/images/companyInfo.jpg" alt="">
-                    </div>
-                    <div class="operation-detail detail">
-                        <h2 class="detail-title">3D Design</h2>
-                        <p class="detail-desc">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Temporibus,
-                            vitae.</p>
-                    </div>
-                </div>
-                <div class="operation">
-                    <div class="thumbnail">
-                        <img src="./assets/images/companyInfo.jpg" alt="">
-                    </div>
-                    <div class="operation-detail detail">
-                        <h2 class="detail-title">Web Design</h2>
-                        <p class="detail-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non, possimus?
-                        </p>
-                    </div>
-                </div>
-                <div class="operation">
-                    <div class="thumbnail">
-                        <img src="./assets/images/companyInfo.jpg" alt="">
-                    </div>
-                    <div class="operation-detail detail">
-                        <h2 class="detail-title">Graphic Design</h2>
-                        <p class="detail-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, neque.
-                        </p>
-                    </div>
-                </div>
-                <div class="operation">
-                    <div class="thumbnail">
-                        <img src="./assets/images/companyInfo.jpg" alt="">
-                    </div>
-                    <div class="operation-detail detail">
-                        <h2 class="detail-title">Wordpress Customization</h2>
-                        <p class="detail-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium,
-                            excepturi!</p>
-                    </div>
-                </div>
+                <?php 
+                   
+                    $args = array(
+                        'post_type' => 'post',
+                        'category_name' => 'services'
+                    );
+                    $arr_posts = new WP_Query($args);
+                    if($arr_posts->have_posts()){
+                        while ($arr_posts->have_posts()){
+                            $arr_posts->the_post();
+                        ?>
+                            <div class="operation">
+                                <div class="thumbnail">
+                                    <?php the_post_thumbnail(); ?>
+                                </div>
+                                <div class="operation-detail detail">
+                                    <h2 class="detail-title">
+                                        <?php the_title(); ?>
+                                    </h2>
+                                    <p class="detail-desc">
+                                        <?php the_excerpt(); ?>
+                                    </p>
+                                </div>
+                            </div>
+                    <?php
+                        }
+                    }
+                    ?>
             </div>
         </div>
     </section>
 
-    <section class="company-moto-section wrapper-container">
+    <section class="company-moto-section wrapper-container has-back-img">
         <div class="wrapper">
-            <div class="company-moto-info">
-                <div class="img-container">
-                    <img src="./assets/images/companyInfo.jpg" alt="">
-                </div>
-                <div class="company-moto-detail">
-                    <h2 class="label-text">Great products for your company.</h2>
-                    <p class="moto-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores est rerum
-                        maiores minima eius iste velit optio, nemo sapiente ea nam molestias vel non sit corrupti.
-                        Voluptas libero esse assumenda?</p>
-                </div>
-            </div>
+            <h2 class="header-text">Testimonials</h2>
+            <ul class="testimonial-list">
+                <li class="testimonial-item">
+                    <div class="user-img">
+                        <img src="https://randomuser.me/api/portraits/men/83.jpg" alt="">
+                    </div>
+                    <p class="testimonial-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur hic reiciendis voluptatem a. Eaque consequuntur ipsam fuga soluta fugit temporibus?
+                    </p>
+                </li>
+                <li class="testimonial-item">
+                    <div class="user-img">
+                        <img src="https://randomuser.me/api/portraits/men/83.jpg" alt="">
+                    </div>
+                    <p class="testimonial-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur hic reiciendis voluptatem a. Eaque consequuntur ipsam fuga soluta fugit temporibus?
+                    </p>
+                </li>
+                <li class="testimonial-item">
+                    <div class="user-img">
+                        <img src="https://randomuser.me/api/portraits/men/83.jpg" alt="">
+                    </div>
+                    <p class="testimonial-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur hic reiciendis voluptatem a. Eaque consequuntur ipsam fuga soluta fugit temporibus?
+                    </p>
+                </li>
+                <li class="testimonial-item">
+                    <div class="user-img">
+                        <img src="https://randomuser.me/api/portraits/men/83.jpg" alt="">
+                    </div>
+                    <p class="testimonial-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur hic reiciendis voluptatem a. Eaque consequuntur ipsam fuga soluta fugit temporibus?
+                    </p>
+                </li>
+                <li class="testimonial-item">
+                    <div class="user-img">
+                        <img src="https://randomuser.me/api/portraits/men/83.jpg" alt="">
+                    </div>
+                    <p class="testimonial-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur hic reiciendis voluptatem a. Eaque consequuntur ipsam fuga soluta fugit temporibus?
+                    </p>
+                </li>
+                <li class="testimonial-item">
+                    <div class="user-img">
+                        <img src="https://randomuser.me/api/portraits/men/83.jpg" alt="">
+                    </div>
+                    <p class="testimonial-desc">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur hic reiciendis voluptatem a. Eaque consequuntur ipsam fuga soluta fugit temporibus?
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="back-img">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/operation.jpg" alt="">
         </div>
     </section>
 

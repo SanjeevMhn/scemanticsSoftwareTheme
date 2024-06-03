@@ -101,12 +101,15 @@
                         </svg>
                     </span>
                 </button>
-                <div class="brand-name">
-                    <a href="#" class="company-logo img-container">
-                        <img src="./assets/images/companyLogo.png" alt="company-logo">
-                    </a>
-                    <span class="company-name">Semantics Software</span>
-                </div>
+                <a class="brand-name"  href="<?php echo site_url(); ?>">
+                    <?php 
+                        $logo_image = get_header_image();
+                    ?>
+                    <span class="company-logo img-container">
+                        <img src="<?php echo $logo_image; ?>" alt="company-logo">
+                    </span>
+                    <span class="company-name"><?php echo get_bloginfo('name') ?></span>
+                </a>
             </div>
             
             <form action="#" class="search-form">
@@ -117,16 +120,16 @@
                     </span>
                 </div>
             </form>
-            <ul class="nav-list">
-                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="" class="nav-link">Projects</a></li>
-                <li class="nav-item"><a href="" class="nav-link">Price</a></li>
-                <li class="nav-item"><a href="" class="nav-link">News</a></li>
-            </ul>
-            <a href="#" class="direct-contact">
-             Get in touch
-            </a>
+            <?php
+                wp_nav_menu(
+                    array(
+                        'container'      => '',
+                        'theme_location' => 'primary-menu',
+                        'items_wrap'     => '<ul id="" class="nav-list">%3$s</ul>',
+                        'add_li_class'   => 'nav-item',
+                        'add_a_class'    => 'nav-link',
+                    ));
+            ?> 
+            
         </div>
     </nav>
