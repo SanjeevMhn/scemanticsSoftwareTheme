@@ -228,9 +228,16 @@ Theme Name: Semantics Software
 	display: flex;
 	gap: 20px;
 	overflow-x: auto;
+	padding-bottom: 12px;
 
 	&::-webkit-scrollbar{
-		width: 0;
+		background-color: var(--color-secondary);
+		height: 12px;
+		border-radius: 100vh;
+	}
+	&::-webkit-scrollbar-thumb{
+		background-color: var(--color-primary);
+		border-radius: 100vh;
 	}
 
 	li,.testimonial-item{
@@ -258,6 +265,11 @@ Theme Name: Semantics Software
 				object-fit: cover;
 			}
 
+		}
+
+		.username{
+			font-size: var(--fs-base);
+			font-weight: 600;
 		}
 
 		.user-img ~ p,

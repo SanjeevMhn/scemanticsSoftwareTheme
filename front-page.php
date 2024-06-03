@@ -120,54 +120,32 @@
         <div class="wrapper">
             <h2 class="header-text">Testimonials</h2>
             <ul class="testimonial-list">
-                <li class="testimonial-item">
-                    <div class="user-img">
-                        <img src="https://randomuser.me/api/portraits/men/83.jpg" alt="">
-                    </div>
-                    <p class="testimonial-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur hic reiciendis voluptatem a. Eaque consequuntur ipsam fuga soluta fugit temporibus?
-                    </p>
-                </li>
-                <li class="testimonial-item">
-                    <div class="user-img">
-                        <img src="https://randomuser.me/api/portraits/men/83.jpg" alt="">
-                    </div>
-                    <p class="testimonial-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur hic reiciendis voluptatem a. Eaque consequuntur ipsam fuga soluta fugit temporibus?
-                    </p>
-                </li>
-                <li class="testimonial-item">
-                    <div class="user-img">
-                        <img src="https://randomuser.me/api/portraits/men/83.jpg" alt="">
-                    </div>
-                    <p class="testimonial-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur hic reiciendis voluptatem a. Eaque consequuntur ipsam fuga soluta fugit temporibus?
-                    </p>
-                </li>
-                <li class="testimonial-item">
-                    <div class="user-img">
-                        <img src="https://randomuser.me/api/portraits/men/83.jpg" alt="">
-                    </div>
-                    <p class="testimonial-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur hic reiciendis voluptatem a. Eaque consequuntur ipsam fuga soluta fugit temporibus?
-                    </p>
-                </li>
-                <li class="testimonial-item">
-                    <div class="user-img">
-                        <img src="https://randomuser.me/api/portraits/men/83.jpg" alt="">
-                    </div>
-                    <p class="testimonial-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur hic reiciendis voluptatem a. Eaque consequuntur ipsam fuga soluta fugit temporibus?
-                    </p>
-                </li>
-                <li class="testimonial-item">
-                    <div class="user-img">
-                        <img src="https://randomuser.me/api/portraits/men/83.jpg" alt="">
-                    </div>
-                    <p class="testimonial-desc">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur hic reiciendis voluptatem a. Eaque consequuntur ipsam fuga soluta fugit temporibus?
-                    </p>
-                </li>
+                <?php 
+                    $args = array(
+                        'post-type' => 'post',
+                        'category_name' => 'reviews'
+                    );
+
+                    $arr_posts = new WP_Query($args);
+                    if($arr_posts->have_posts()){
+                        while($arr_posts->have_posts()){
+                            $arr_posts->the_post();
+                        
+                ?>
+                    <li class="testimonial-item">
+                        <div class="user-img">
+                            <?php the_post_thumbnail(); ?>
+                        </div>
+                        <h2 class="username"><?php the_title(); ?></h2>
+                        <p class="testimonial-desc">
+                            <?php the_excerpt(); ?>
+                        </p>
+                    </li>
+                <?php 
+                }
+                    }
+                 ?>
+               
             </ul>
         </div>
         <div class="back-img">
