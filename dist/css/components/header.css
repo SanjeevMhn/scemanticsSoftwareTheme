@@ -30,11 +30,16 @@
     gap: 35px;
     .info-item{
         display: grid;
-        grid-template-columns: 22px auto;
+        grid-template-columns: 22px 1fr;
         align-items: center;
         gap: 20px;
+        &:nth-child(1),
+        &:nth-child(2){
+            border-right: 2px solid var(--color-primary);
+        }
+            
         .detail{
-            font-size: var(--fs-xs);
+            font-size: var(--fs-sm);
             color: var(--color-gray);
             overflow-wrap: break-word;
             display: -webkit-box;

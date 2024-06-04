@@ -158,62 +158,42 @@
             <div class="invitation-container">
                 <h2 class="label-text">Want to build something?</h2>
                 <p class="desc-text">Lorem ipsum dolor sit amet.</p>
-                <a href="" class="direct-contact">
+                <a href="<?php echo site_url('/contact-us') ?>" class="direct-contact">
                     Contact
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- <section class="company-client-reviews wrapper-container">
-        <div class="wrapper">
-
-        </div>
-    </section>
-
-    <section class="company-client-list wrapper-container">
-        <div class="wrapper">
-
-        </div>
-    </section> -->
-
-
     <section class="company-blog-list">
         <div class="wrapper">
             <h2 class="header-text">Blogs</h2>
             <div class="blog-list grid-list">
-                <div class="blog">
-                    <div class="thumbnail">
-                        <img src="./assets/images/companyInfo.jpg" alt="">
-                    </div>
-                    <div class="detail">
-                        <h2 class="detail-title">Wordpress Customization</h2>
-                        <p class="detail-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium,
-                            excepturi!</p>
-                    </div>
-                </div>
+                <?php 
+                    $args = array(
+                        'post-type'     => 'post',
+                        'category_name' => 'blog'
+                    );
 
+                    $arr_posts = new WP_Query($args);
+                    if($arr_posts->have_posts()){
+                        while($arr_posts->have_posts()){
+                            $arr_posts->the_post();
+                ?>
                 <div class="blog">
                     <div class="thumbnail">
-                        <img src="./assets/images/companyInfo.jpg" alt="">
+                        <?php the_post_thumbnail(); ?>
                     </div>
                     <div class="detail">
-                        <h2 class="detail-title">Wordpress Customization</h2>
-                        <p class="detail-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium,
-                            excepturi!</p>
+                        <h2 class="detail-title">
+                            <?php the_title(); ?>
+                        </h2>
+                        <p class="detail-desc">
+                            <?php the_excerpt(); ?>
+                        </p>
                     </div>
                 </div>
-
-                <div class="blog">
-                    <div class="thumbnail">
-                        <img src="./assets/images/companyInfo.jpg" alt="">
-                    </div>
-                    <div class="detail">
-                        <h2 class="detail-title">Wordpress Customization</h2>
-                        <p class="detail-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium,
-                            excepturi!</p>
-                    </div>
-                </div>
+                <?php }} ?>
             </div>
         </div>
     </section>
